@@ -79,13 +79,13 @@ html, body{
   margin-left: auto;
 }
 
-.fav-box > img {
+.fav-box > .img > img{
   transform: scale(1);
   height:50%;
 }
 
 
-.fav-box > img:hover {
+.fav-box > .img:hover {
   opacity: 0.5;
 }
 .fav > .fav-box {
@@ -137,8 +137,19 @@ h2 {
   background-color:gray;
   padding:20px !important;
   height:3em;
+  display: flex;
+  flex-direction: row;
 }
-
+.link {
+  margin-left: auto;
+  justify-content: end;
+}
+.link .a {
+  color:black;
+  justify-content: end;
+  text-decoration: none;
+  font-size: 1rem;
+}
 .footer {
   background-color:gray;
   padding: 0px !important;

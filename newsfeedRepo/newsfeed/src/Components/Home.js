@@ -1,6 +1,7 @@
 import React  from 'react';
 import { useQuery } from '@apollo/client';
 import '../App.css';
+import { Link } from 'react-router-dom'
 import Favourites from './Favourites'
 import { NEWS1 } from './Graphql/Queries'
 import Navbar from './Utils/Navbar'
@@ -23,8 +24,10 @@ function Home(props) {
         return (
         <div key={value.id} className="box">
             <div className="card">
-                <img onClick={() => sendValues(value)} src={"http://localhost:1337"+value.thumbnail.url}>
-                </img>
+                <Link to="/detailedview" onClick={() => sendValues(value)}>
+                    <img  src={"http://localhost:1337"+value.thumbnail.url}>
+                    </img>
+                </Link>
                     <hr></hr>
                 <h2>{value.newsTitle}</h2>
                 <div className="description">{value.newsDescription.substr(0,250)+"..."}</div>

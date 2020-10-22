@@ -4,8 +4,14 @@ import FavouriteButton from './Utils/FavouriteButton';
 import LikeButton from './Utils/LikeButton'
 import Navbar from './Utils/Navbar'
 import Footer from './Utils/Footer'
+import { Link , Redirect} from 'react-router-dom'
 
 function DetailedView(props) {
+    
+    if(props.data == undefined){
+        return <Redirect to="/" />
+    }
+    
     return (
         <div>
             <Navbar />
@@ -16,7 +22,9 @@ function DetailedView(props) {
                     <LikeButton data={props.data} />
                     <div className="div3">{props.data.newsDescription}</div>
                     <FavouriteButton data={props.data}/>
-                    <button className="div7" onClick={props.reset}>Vissza</button>
+                    <Link className="div7" to="/">
+                        <button onClick={props.reset}>Vissza</button>
+                    </Link>
                 </div>
             </div>
             <Footer />

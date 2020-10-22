@@ -2,23 +2,27 @@ import React, { useState }  from 'react';
 import './App.css';
 import Home from './Components/Home'
 import DetailedView from './Components/DetailedView'
+import { BrowserRouter as Router , Route , Switch } from 'react-router-dom'
 
 
 
-function App() {
+function App(props) {
   const [values, setValues] = useState() 
   const reset = () => {
     setValues(undefined)
   }
     return (
       <div>
-        {(values === undefined) 
-          ?  [<Home setValues={setValues}/>]
-          :  [<DetailedView 
-            reset={reset}
-            data={values}/>
-            ]
-        }
+          <Router>
+            <Switch>
+                <Route path="/" exact>
+                  <Home setValues={setValues}/>
+                </Route>
+                <Route path="/detailedview">
+                  <DetailedView data={values} reset={reset}/>
+                </Route>
+            </Switch>
+          </Router>
       </div>
     );
 }

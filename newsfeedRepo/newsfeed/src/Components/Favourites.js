@@ -1,13 +1,21 @@
 import React from 'react'
 import '../App.css'
+import { Link } from 'react-router-dom'
 
 function Favourites(props) {
+
+    const sendValues = (value) => {
+        props.setValues(value)
+    }
     const divs = props.data.map(value => {
         if(value.isFavourite) {
             return( 
                 <div className="fav">
                     <div className="fav-box">
-                        <img onClick={() => props.setValues(value)} src={"http://localhost:1337"+value.thumbnail.url}></img>
+                        <Link className="img" to="/detailedview" onClick={() => sendValues(value)}>
+                            <img  src={"http://localhost:1337"+value.thumbnail.url}>
+                            </img>
+                        </Link>
                         <div>
                             {value.newsTitle}
                         </div>
