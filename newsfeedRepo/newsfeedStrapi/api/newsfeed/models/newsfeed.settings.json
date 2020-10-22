@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "newsfeeds",
+  "info": {
+    "name": "newsfeed",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "newsTitle": {
+      "type": "string"
+    },
+    "newsDescription": {
+      "type": "richtext"
+    },
+    "thumbnail": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "likesCounter": {
+      "type": "integer",
+      "default": 0
+    },
+    "isFavourite": {
+      "type": "boolean",
+      "default": false
+    },
+    "isLiked": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

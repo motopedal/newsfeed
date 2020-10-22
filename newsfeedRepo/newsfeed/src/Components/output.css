@@ -1,0 +1,45 @@
+.detailedview .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0;
+  grid-row-gap: 0px;
+  padding: 8rem 15rem;
+  margin:auto;
+  justify-content: center;
+}
+.detailedview .div1{
+  grid-area: 1/1/4/2;
+  object-fit: cover;
+}
+.detailedview .div2 {
+  grid-area: 1/3/2/4;
+  padding:30px;
+}
+.detailedview .div3 {
+  grid-area: 2/3/4/4;
+  padding:30px;
+  width:300px;
+}
+.detailedview .div4 {
+  grid-area: 5/2/6/3;
+
+}
+.detailedview .div4 .button {
+  text-align: center;
+}
+.detailedview .div5 {
+  grid-area: 5/3/6/4;
+}
+.detailedview .div6 {
+  grid-area: 5/4/6/5;
+}
+.detailedview .div7{
+  grid-area: 4/3/6/4;
+  border-radius: 20px;
+  margin:auto;
+  padding: 20px;
+}
+
+
+/*# sourceMappingURL=output.css.map */
