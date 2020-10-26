@@ -1,0 +1,12 @@
+
+query NEWS1{
+  newsfeeds{
+    id,
+    newsTitle,
+    newsDescription,
+    thumbnail{url},
+    likesCounter,
+    isFavourite,
+    isLiked
+  }
+}
